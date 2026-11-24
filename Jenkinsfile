@@ -2,11 +2,11 @@ pipeline {
     agent any
 
     environment {
-        AWS_REGION = 'ap-south-1'
-        AWS_ACCOUNT_ID = '123456789012'
+        AWS_REGION = 'us-east-1'
+        AWS_ACCOUNT_ID = '805068224659'
         ECR_REPOSITORY = 'devops-web'
-        ECR_REGISTRY = "${AWS_ACCOUNT_ID}.dkr.ecr.${AWS_REGION}.amazonaws.com"
-        ECR_IMAGE = "${ECR_REGISTRY}/${ECR_REPOSITORY}"
+        ECR_REGISTRY = '805068224659.dkr.ecr.us-east-1.amazonaws.com'
+        ECR_IMAGE = '805068224659.dkr.ecr.us-east-1.amazonaws.com/devops-web'
     }
 
     stages {
@@ -79,8 +79,11 @@ pipeline {
 
         stage('Verify Deployment') {
             steps {
-                sh 'docker ps'
-                sh 'curl -f http://localhost:5000'
+                sh '''
+                    docker ps
+
+                    curl -f http://localhost:5000
+                '''
             }
         }
     }
