@@ -11,7 +11,7 @@ def home():
         </head>
         <body>
             <h1>   Hello! Welcomemuhamed b belal tokavci DevOps CI/CD!</h1>
-            <h2>   Application deployed using Docker and Jenkins.</h2>
+            <h2>     Application deployed using Docker and Jenkins.</h2>
             <p>Git + Docker + Jenkins</p>
         </body>
     </html>
